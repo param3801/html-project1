@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Flip Card</title>
+    <style>
+        /* CSS for the 3D Flip Card */
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #141515;
+            font-family: Arial, sans-serif;
+        }
+
+        .flip-card {
+            background-color: transparent;
+            width: 300px;
+            height: 400px;
+            perspective: 1000px;
+        }
+
+        .flip-card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+        }
+
+        .flip-card:hover .flip-card-inner {
+            transform: rotateY(180deg);
+        }
+
+        .flip-card-front, .flip-card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .flip-card-front {
+            background-color: #ffffff;
+            color: #333;
+        }
+
+        .flip-card-back {
+            background-color: #3498db;
+            color: white;
+            transform: rotateY(180deg);
+        }
+
+        .flip-card-front img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin-bottom: 20px;
+        }
+
+        .flip-card-front h2, .flip-card-back h2 {
+            margin: 0;
+            font-size: 24px;
+        }
+
+        .flip-card-front p, .flip-card-back p {
+            margin: 10px 0;
+            font-size: 16px;
+        }
+
+        .flip-card-back a {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #2ecc71;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .flip-card-back a:hover {
+            background-color: #27ae60;
+        }
+    </style>
+</head>
+<body>
+    <!-- 3D Flip Card Structure -->
+    <div class="flip-card">
+        <div class="flip-card-inner">
+            <!-- Front Side of the Card -->
+            <div class="flip-card-front">
+                <img src="./image.png" alt="Avatar">
+                <h2>Param Gupta</h2>
+                <p>Developer</p>
+            </div>
+            <!-- Back Side of the Card -->
+            <div class="flip-card-back">
+                <h2>About Me</h2>
+                <p>I am a passionate web developer with learning in HTML, CSS, JavaScript,Django and more. I love creating interactive and user-friendly websites.</p>
+                <a href="#">Contact Me</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
